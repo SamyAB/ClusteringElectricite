@@ -1,0 +1,67 @@
+\documentclass[a4paper,titlepage,12pt]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{titlesec}%pour ne pas afficher "Chapitre X" en début de chapitre
+\titleformat{\chapter}[display]
+	  {\normalfont\bfseries}{}{0pt}{\Huge}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1.2in]{geometry}
+\usepackage[french]{babel}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{lmodern}
+\setcounter{secnumdepth}{3}
+\usepackage{enumitem}
+\usepackage{wasysym}
+\usepackage{pifont}
+\usepackage[french,onelanguage]{algorithm2e} %for psuedo code
+\usepackage[labelfont=bf]{caption}
+\captionsetup[figure]{labelfont=bf} %pour mettre les Figure X.X en gras
+
+
+\title{Rapport}
+\author{AIT BACHIR Samy}
+
+\pagestyle{headings}
+
+\begin{document}
+\chapter{Introduction}
+	Dans ce projet il est demandé d'effectuer une classification sur les données de consommation d'électricité de 2914 logements irlandais, et ce afin d'obtenir des classes homogènes, séparant les logements en plusieurs profils, selon leurs consommation.\newline
+	
+	Les différents algorithmes utilisés, vus durant le cours d'apprentissage non supervisé, sont :
+	\begin{itemize}
+		\item La classification hiérarchique ascendante(CAH).
+		\item L'algorithme des centres mobiles (K-means).
+		\item L'algorithme Self Organising Map (SOM).
+		\item La classification spectrale.
+	\end{itemize}
+	
+	Les algorithmes sont directement utilisés sur les données fournies, car celles-ci ont déjà été normalisées.\newline
+	
+	Dans les prochains chapitres, ce rapport décrira l'utilisation des différents algorithmes sous R sur le jeu de données, puis discutera les résultats, premièrement sur l'ensemble des données, puis dans un second temps uniquement sur les données représentant les heures des jours ouvrés. Ce document se termine par une brève conclusion. 
+	 
+\chapter{Partitionnement et analyse sur l'ensemble des données}
+	\section{Algorithmes de classification}
+		\subsection{Classification Hiérarchique Ascendante CAH}
+			Les algorithme de classification hiérarchique ascendante sont des algorithmes qui ormes des clusters à chaque itération en combinant plusieurs clusters, se basant sur la notion de distance entre ceux-ci.
+			
+			À l'initialisation de l'algorithme, chaque instance représente un cluster. à la fin de l'algorithme, toutes les instances se trouve dans un seul et même cluster.
+			
+			Ici, la distance utilisée est la distance euclidienne. Pour commencer les distances sont calculées deux à deux entre instances et sont sauvegardées dans une matrice symétrique dite "Matrice de distance".
+			
+			La méthode de combinaison des clusters utilisée ici est appelée méthode de Ward, cette méthode permet, à chaque étape, d’augmenter un minimum l'inertie intra-classe, et ce jusqu'à ce que celle-ci atteigne la valeur de l'inertie totale.
+			
+			Continuer ici dendrogramme séparation des classes …
+		\subsection{Algorithme des Centres Mobiles K-means}
+			
+		\subsection{Algorithme Self Organising Map}
+			
+		\subsection{Classification Spectrale}
+			
+	\section{Représentations et analyses des résultats}
+\chapter{Partitionnement et analyse sur les données hors week-end}
+	\section{Algorithmes de classification}
+	\section{Représentations et analyses des résultats}
+\chapter{Conclusion}
+\end{document}
