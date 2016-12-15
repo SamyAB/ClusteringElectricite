@@ -46,4 +46,33 @@ plot(x = 1:168, y = centers_CAH_2[2,] ,type = 'l' , col = 2)
 lines(x = 1:168, y = centers_CAH_2[1,] ,type = 'l' , col = 1)
 
 ############## K-means #########
+#N'ayant pas de critère à priori pour le nombre de clusters, on test de k dans [2,5]
+# K = 2
+KM_2 = kmeans(electricite,2)
+plot(x = 1:168, y=as.matrix(KM_2$centers)[1,],type = 'l',col = 1)
+lines(x=1:168, y =as.matrix(KM_2$centers)[2,],type = 'l',col = 2)
+KM_2$tot.withinss
+# K = 3 
+KM_3 = kmeans(electricite,3)
+plot(x = 1:168, y=as.matrix(KM_3$centers)[2,],type = 'l',col = 2)
+lines(x=1:168, y =as.matrix(KM_3$centers)[1,],type = 'l',col = 1)
+lines(x=1:168, y =as.matrix(KM_3$centers)[3,],type = 'l',col = 3)
+KM_3$tot.withinss
+# K = 4
+KM_4 = kmeans(electricite,4)
+plot(x = 1:168, y=as.matrix(KM_4$centers)[3,],type = 'l',col = 3)
+lines(x=1:168, y =as.matrix(KM_4$centers)[1,],type = 'l',col = 1)
+lines(x=1:168, y =as.matrix(KM_4$centers)[4,],type = 'l',col = 4)
+lines(x=1:168, y =as.matrix(KM_4$centers)[2,],type = 'l',col = 2)
+KM_4$tot.withinss
+# K = 5
+KM_5 = kmeans(electricite,5)
+plot(x = 1:168, y=as.matrix(KM_5$centers)[3,],type = 'l',col = 3)
+lines(x=1:168, y =as.matrix(KM_5$centers)[1,],type = 'l',col = 1)
+lines(x=1:168, y =as.matrix(KM_5$centers)[4,],type = 'l',col = 4)
+lines(x=1:168, y =as.matrix(KM_5$centers)[2,],type = 'l',col = 2)
+lines(x=1:168, y =as.matrix(KM_5$centers)[5,],type = 'l',col = 5)
+KM_5$tot.withinss
+
+
 
