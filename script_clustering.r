@@ -21,6 +21,7 @@ plot(h_ward)
 classes_CAH <- cutree(h_ward, k=2)
 
 #Interprétation des résultats
+
 ##Création d'une matrice de centres de classes 
 centers_CAH_2 = matrix(data = 0, nrow = 2 , ncol = 168) #Matrice contenant les deux centres des deux clusters
 nb_c1 = 0 #Nombre d'éléments du cluster 1
@@ -36,10 +37,13 @@ for (i in 1:2914) {
     nb_c2 = nb_c2 + 1
   }
 }
-
 #Les centres calculés sont les moyennes algébirques des élémentes les composant
 centers_CAH_2[1,] = centers_CAH_2[1,] / nb_c1
 centers_CAH_2[2,] = centers_CAH_2[2,] / nb_c1
+
+#Dessin des courbes pour les deux centres
+plot(x = 1:168, y = centers_CAH_2[2,] ,type = 'l' , col = 2)
+lines(x = 1:168, y = centers_CAH_2[1,] ,type = 'l' , col = 1)
 
 ############## K-means #########
 
