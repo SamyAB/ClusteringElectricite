@@ -34,7 +34,6 @@
 		\item La classification hiérarchique ascendante(CAH).
 		\item L'algorithme des centres mobiles (K-means).
 		\item L'algorithme Self Organising Map (SOM).
-		\item La classification spectrale.
 	\end{itemize}
 	
 	Les algorithmes sont directement utilisés sur les données fournies, car celles-ci ont déjà été normalisées.\newline
@@ -52,16 +51,35 @@
 			
 			La méthode de combinaison des clusters utilisée ici est appelée méthode de Ward, cette méthode permet, à chaque étape, d’augmenter un minimum l'inertie intra-classe, et ce jusqu'à ce que celle-ci atteigne la valeur de l'inertie totale.
 			
-			Continuer ici dendrogramme séparation des classes …
 		\subsection{Algorithme des Centres Mobiles K-means}
+			L'algorithme K-means ne donne pas à priori de moyen d'estimer le nombre de classes, par conséquent, dans ce projet il a été pari pris de tester un nombre variables de clusters, mais en se basant sur le nombre de clusters donnés par la CAH, et donc de faire varier le K entre 2 et 5.
 			
+			L'algorithme ayant une initialisation aléatoire, les algorithmes sont relancés plusieurs fois. 
+		
 		\subsection{Algorithme Self Organising Map}
-			
-		\subsection{Classification Spectrale}
-			
+			Pour l'algorithme MAP, plusieurs types de grille ont été testées (une dimension, deux dimensions), puis la grille finalement retenue est une grille à deux dimensions, de tailles 10x10.
+									
 	\section{Représentations et analyses des résultats}
+		\subsection{CAH}
+			Le dendrogramme retourné par la méthode nous indique que le nombre de classe serait 2, par conséquent, on effectue une coupure sur la dernière étape de ce graphique, pour obtenir les deux classes dont les centres sont montrés sur la figure.
+		
+			D'après les moyennes des clusters obtenues, on peut séparer les foyers en deux parties distinctes, une partie de foyer qui a une forte consommation, et une autre une basse consommation. De plus on remarque que les foyers du premier clusters (en noir), baissent leurs consommations en milieu de journée, et que celle ci remonte au fil de l'après midi pour atteindre son pique en début de soirée.
+		
+			Les foyers à forte consommation (en rouge) voient leurs consommations augmenter, mais de façon continue, ceci dit cette augmentation stagne quelques en milieu de journée.
+		
+		\subsection{K-means}
+			Pour chacun des K utilisé un graphe a été généré par souci de concision du rapport seul le plot jugé le plus pertinent a été ajouté à celui-ci.
+			
+			%KM4 PNG
+			
+			Nous voyons bien des classes se rapportant a celles détectées par la CAH précédemment, mais on arrive à voir différents profils intermédiaires.
+			
+		\subsection{SOM}
+			La map obtenue par l'algorithme n'est pas forcément utilisable telle qu'elle, un K-means est exécuté par dessus, avec 3 classes.
+		
 \chapter{Partitionnement et analyse sur les données hors week-end}
 	\section{Algorithmes de classification}
+		Les mêmes algor
 	\section{Représentations et analyses des résultats}
 \chapter{Conclusion}
 \end{document}
